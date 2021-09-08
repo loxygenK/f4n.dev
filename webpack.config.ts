@@ -1,9 +1,9 @@
 import path from "path"
 import HtmlWebpackPlugin from "html-webpack-plugin";
 
-import { Configuration } from "webpack";
+import webpack from "webpack";
 
-const configuration: Configuration = {
+const configuration: webpack.Configuration = {
   // TODO: Change this using environemnt variable
   mode: "development",
   entry: path.resolve(__dirname, "src/index.tsx"),
@@ -21,7 +21,13 @@ const configuration: Configuration = {
         use: ['babel-loader'],
       }
     ]
-  }
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "src", "template.html"),
+      scriptLoading: "defer"
+    })
+  ]
 }
 
 export default configuration;
