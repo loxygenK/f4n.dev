@@ -10,14 +10,17 @@ specifiers:
   '@types/node': ^16.7.13
   '@types/react': ^17.0.20
   '@types/react-dom': ^17.0.9
+  '@types/sass': ^1.16.1
   '@types/webpack': ^5.28.0
   '@types/webpack-dev-server': ^4.1.0
   babel-loader: ^8.2.2
   copy-webpack-plugin: ^9.0.1
   css-loader: ^6.2.0
+  fibers: ^5.0.0
   html-webpack-plugin: ^5.3.2
   react: ^17.0.2
   react-dom: ^17.0.2
+  sass: ^1.39.0
   sass-loader: ^12.1.0
   style-loader: ^3.2.1
   ts-node: ^10.2.1
@@ -40,13 +43,16 @@ devDependencies:
   '@types/node': 16.7.13
   '@types/react': 17.0.20
   '@types/react-dom': 17.0.9
+  '@types/sass': 1.16.1
   '@types/webpack': 5.28.0_webpack-cli@4.8.0
   '@types/webpack-dev-server': 4.1.0_webpack-cli@4.8.0
   babel-loader: 8.2.2_02ab79faf18a98050fd2cd956ffa58f7
   copy-webpack-plugin: 9.0.1_webpack@5.52.0
   css-loader: 6.2.0_webpack@5.52.0
+  fibers: 5.0.0
   html-webpack-plugin: 5.3.2_webpack@5.52.0
-  sass-loader: 12.1.0_webpack@5.52.0
+  sass: 1.39.0
+  sass-loader: 12.1.0_277fc6af44d4d3e17d9a48fb11072ced
   style-loader: 3.2.1_webpack@5.52.0
   ts-node: 10.2.1_ba6070efdb19aacfdf37f0e70ee888df
   typescript: 4.4.2
@@ -1450,6 +1456,12 @@ packages:
     resolution: {integrity: sha512-xoDlM2S4ortawSWORYqsdU+2rxdh4LRW9ytc3zmT37RIKQh6IHyKwwtKhKis9ah8ol07DCkZxPt8BBvPjC6v4g==}
     dev: true
 
+  /@types/sass/1.16.1:
+    resolution: {integrity: sha512-iZUcRrGuz/Tbg3loODpW7vrQJkUtpY2fFSf4ELqqkApcS2TkZ1msk7ie8iZPB86lDOP8QOTTmuvWjc5S0R9OjQ==}
+    dependencies:
+      '@types/node': 16.7.13
+    dev: true
+
   /@types/scheduler/0.16.2:
     resolution: {integrity: sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==}
     dev: true
@@ -2262,6 +2274,12 @@ packages:
     resolution: {integrity: sha1-l4hXRCxEdJ5CBmE+N5RiBYJqvYA=}
     dev: true
 
+  /detect-libc/1.0.3:
+    resolution: {integrity: sha1-+hN8S9aY7fVc1c0CrFWfkaTEups=}
+    engines: {node: '>=0.10'}
+    hasBin: true
+    dev: true
+
   /detect-node/2.1.0:
     resolution: {integrity: sha512-T0NIuQpnTvFDATNuHN5roPwSBG83rFsuO+MXXH9/3N1eFbn4wcPjttvjMLEPWJ0RGUYgQE7cGgS3tNxbqCGM7g==}
     dev: true
@@ -2518,6 +2536,14 @@ packages:
     engines: {node: '>=0.8.0'}
     dependencies:
       websocket-driver: 0.7.4
+    dev: true
+
+  /fibers/5.0.0:
+    resolution: {integrity: sha512-UpGv/YAZp7mhKHxDvC1tColrroGRX90sSvh8RMZV9leo+e5+EkRVgCEZPlmXeo3BUNQTZxUaVdLskq1Q2FyCPg==}
+    engines: {node: '>=10.0.0'}
+    requiresBuild: true
+    dependencies:
+      detect-libc: 1.0.3
     dev: true
 
   /fill-range/7.0.1:
@@ -3818,7 +3844,7 @@ packages:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
     dev: true
 
-  /sass-loader/12.1.0_webpack@5.52.0:
+  /sass-loader/12.1.0_277fc6af44d4d3e17d9a48fb11072ced:
     resolution: {integrity: sha512-FVJZ9kxVRYNZTIe2xhw93n3xJNYZADr+q69/s98l9nTCrWASo+DR2Ot0s5xTKQDDEosUkatsGeHxcH4QBp5bSg==}
     engines: {node: '>= 12.13.0'}
     peerDependencies:
@@ -3834,9 +3860,19 @@ packages:
       sass:
         optional: true
     dependencies:
+      fibers: 5.0.0
       klona: 2.0.4
       neo-async: 2.6.2
+      sass: 1.39.0
       webpack: 5.52.0_webpack-cli@4.8.0
+    dev: true
+
+  /sass/1.39.0:
+    resolution: {integrity: sha512-F4o+RhJkNOIG0b6QudYU8c78ZADKZjKDk5cyrf8XTKWfrgbtyVVXImFstJrc+1pkQDCggyidIOytq6gS4gCCZg==}
+    engines: {node: '>=8.9.0'}
+    hasBin: true
+    dependencies:
+      chokidar: 3.5.2
     dev: true
 
   /scheduler/0.20.2:

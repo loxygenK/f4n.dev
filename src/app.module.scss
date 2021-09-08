@@ -1,0 +1,9 @@
+@use "~/styling/color.module.scss";
+
+body {
+  @include color.fore;
+}
+
+.hoge {
+  color: blue;
+}

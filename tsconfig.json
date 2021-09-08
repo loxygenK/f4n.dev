@@ -14,8 +14,7 @@
     "baseUrl": "src",
     "noEmit": true,
     "paths": {
-      "@app/*": ["./*"],
-      "@css/*": ["./style/*"]
+      "~/*": ["./*"]
     }
   }
 }
