@@ -2,10 +2,7 @@
   "name": "f4n.dev",
   "version": "1.0.0",
   "description": "The portfolio file for loxygen.",
-  "main": "index.js",
-  "scripts": {
-    "build": "tsc && webpack"
-  },
+  "main": "src/index.tsx",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/loxygenK/f4n.dev.git"
@@ -19,6 +16,10 @@
     "url": "https://github.com/loxygenK/f4n.dev/issues"
   },
   "homepage": "https://github.com/loxygenK/f4n.dev#readme",
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
   "devDependencies": {
     "@babel/core": "^7.15.5",
     "@babel/plugin-transform-runtime": "^7.15.0",
@@ -43,8 +44,9 @@
     "webpack-cli": "^4.8.0",
     "webpack-dev-server": "^4.1.1"
   },
-  "dependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+  "scripts": {
+    "build": "tsc && webpack",
+    "type-check": "tsc",
+    "dev": "webpack-dev-server"
   }
 }
