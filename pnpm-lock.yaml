@@ -10,6 +10,7 @@ specifiers:
   '@types/node': ^16.7.13
   '@types/react': ^17.0.20
   '@types/react-dom': ^17.0.9
+  '@types/webpack': ^5.28.0
   '@types/webpack-dev-server': ^4.1.0
   babel-loader: ^8.2.2
   copy-webpack-plugin: ^9.0.1
@@ -39,6 +40,7 @@ devDependencies:
   '@types/node': 16.7.13
   '@types/react': 17.0.20
   '@types/react-dom': 17.0.9
+  '@types/webpack': 5.28.0_webpack-cli@4.8.0
   '@types/webpack-dev-server': 4.1.0_webpack-cli@4.8.0
   babel-loader: 8.2.2_02ab79faf18a98050fd2cd956ffa58f7
   copy-webpack-plugin: 9.0.1_webpack@5.52.0
@@ -1531,6 +1533,19 @@ packages:
       source-map: 0.6.1
     dev: true
 
+  /@types/webpack/5.28.0_webpack-cli@4.8.0:
+    resolution: {integrity: sha512-8cP0CzcxUiFuA9xGJkfeVpqmWTk9nx6CWwamRGCj95ph1SmlRRk9KlCZ6avhCbZd4L68LvYT6l1kpdEnQXrF8w==}
+    dependencies:
+      '@types/node': 16.7.13
+      tapable: 2.2.0
+      webpack: 5.52.0_webpack-cli@4.8.0
+    transitivePeerDependencies:
+      - '@swc/core'
+      - esbuild
+      - uglify-js
+      - webpack-cli
+    dev: true
+
   /@webassemblyjs/ast/1.11.1:
     resolution: {integrity: sha512-ukBh14qFLjxTQNTXocdyksN5QdM28S1CxHt2rdskFyL+xFV7VremuBLVbmCePj+URalXBENx/9Lm7lnhihtCSw==}
     dependencies:
@@ -2574,6 +2589,7 @@ packages:
     resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
+    requiresBuild: true
     dev: true
     optional: true
 
