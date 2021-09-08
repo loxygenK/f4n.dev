@@ -18,7 +18,7 @@ const configuration: Configuration = {
     rules: [
       {
         test: /\.tsx?/,
-        use: ['babel-loader']
+        use: ['babel-loader'],
       }
     ]
   }
