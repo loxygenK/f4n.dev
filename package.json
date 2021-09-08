@@ -1,0 +1,22 @@
+{
+  "name": "f4n.dev",
+  "version": "1.0.0",
+  "description": "The portfolio file for loxygen.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/loxygenK/f4n.dev.git"
+  },
+  "keywords": [
+    "portfolio"
+  ],
+  "author": "loxygen.k <me@loxygen.dev>",
+  "license": "CC-BY-NC-4.0",
+  "bugs": {
+    "url": "https://github.com/loxygenK/f4n.dev/issues"
+  },
+  "homepage": "https://github.com/loxygenK/f4n.dev#readme"
+}
