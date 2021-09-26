@@ -7,5 +7,4 @@ export const AppRouter = () => (
       <Route exact path="/" component={() => <div>Hi</div>} />
     </BrowserRouter>
   </div>
-)
-
+);
