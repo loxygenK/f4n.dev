@@ -36,10 +36,13 @@ const configuration: Configuration = {
         use: [
           "style-loader",
           {
-            loader: "css-loader",
+            loader: "css-loader?modules",
             options: {
               sourceMap: !isProduction,
-              importLoaders: 2
+              importLoaders: 2,
+              modules: {
+                exportLocalsConvention: "dashes"
+              }
             }
           },
           {

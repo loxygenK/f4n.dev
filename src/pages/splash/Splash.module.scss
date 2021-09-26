@@ -1,0 +1,82 @@
+@use "~/styling/color.module.scss";
+@use "~/styling/font.module.scss";
+@use "~/styling/layout.module.scss";
+
+.splash-wrapper {
+  @include layout.extendAbsolutely;
+  overflow: clip;
+
+  background-color: color.get-theme-color(background);
+}
+
+.splash{
+  @include layout.extendAbsolutely;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: color.get-theme-color(dark-background);
+
+}
+
+.terminal {
+  @include font.use-set(monospace);
+  color: color.get-theme-color(background);
+
+  line-height: 130%;
+  
+  animation: 0.25s forwards cubic-bezier(.06,.74,.48,.96) slideIn;
+}
+
+.pwd {
+  display: inline-block;
+
+  padding: 0em 0.5em;
+  background-color: color.get-theme-color(terminal-accent);
+}
+
+.arrow {
+  &-body {
+    color: #aaa;
+  }
+
+  &-tip {
+    color: color.get-theme-color(terminal-accent);
+    margin-right: 0.75em;
+  }
+}
+
+.output {
+  font-weight: bold;
+}
+
+.hide {
+  opacity: 0;
+}
+
+.scaling {
+  animation: 1.5s forwards cubic-bezier(.72,0,.87,.21) scaleOut;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(2em);
+    opacity: 0%;
+  }
+  to {
+    transform: translateY(0em);
+    opacity: 100%;
+  }
+}
+
+@keyframes scaleOut {
+  from {
+    transform: scale(100%) rotate(0deg);
+    opacity: 100%;
+  }
+  to {
+    transform: scale(500%) rotate(2deg);
+    opacity: 0%;
+  }
+}

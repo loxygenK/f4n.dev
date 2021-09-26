@@ -1,3 +1,16 @@
-@mixin fore {
-  color: #ff000;
+@use "util.module.scss";
+
+$theme-color: (
+  background: #f5edf3,
+  background-alt: #ebb2dd,
+  dark-background: #1c0d18,
+  dark-background-alt: #2b1f28,
+  text-color: #3d3d3d,
+  text-color-secondary: #696969,
+  text-color-accent: #697db3,
+  terminal-accent: #845683,
+);
+
+@function get-theme-color($name) {
+  @return util.map-get-with-error($theme-color, $name, "The theme color");
 }

@@ -1,0 +1,11 @@
+@use "util.module.scss";
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap');
+
+$font-set: (
+  "monospace": "IBM Plex Mono",
+);
+
+@mixin use-set($name) {
+  font-family: util.map-get-with-error($font-set, $name, "The defined font set");
+}
