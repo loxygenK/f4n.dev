@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
-import {Splash} from "./splash/Splash";
+import { Splash } from "./splash/Splash";
 
 export const AppRouter = () => (
   <div>

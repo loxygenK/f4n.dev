@@ -9,33 +9,37 @@ export type TypingEffectProps = {
   onNotify: () => void;
   onCompleted: () => void;
   children: string;
-}
+};
 type State = {
   intervalCount: number;
   notified: boolean;
   interval?: NodeJS.Timeout;
-}
+};
 export class TypingEffect extends React.Component<TypingEffectProps, State> {
-
   constructor(props: TypingEffectProps) {
     super(props);
 
     this.state = {
       intervalCount: 0,
-      notified: false
+      notified: false,
     };
   }
 
   handleTick() {
-    const clearAt = this.props.delay + this.props.children.length + Math.max(this.props.notifyAt, 0);
-    const notifyAt = this.props.delay + this.props.children.length + this.props.notifyAt;
+    const clearAt =
+      this.props.delay +
+      this.props.children.length +
+      Math.max(this.props.notifyAt, 0);
+    const notifyAt =
+      this.props.delay + this.props.children.length + this.props.notifyAt;
 
-    if(!this.state.notified && this.state.intervalCount >= notifyAt) {
+    if (!this.state.notified && this.state.intervalCount >= notifyAt) {
       this.props.onNotify();
     }
 
-    if(this.state.intervalCount >= clearAt) {
-      if(this.state.interval == null) throw Error("state.interval must not be null");
+    if (this.state.intervalCount >= clearAt) {
+      if (this.state.interval == null)
+        throw Error("state.interval must not be null");
       clearInterval(this.state.interval);
       this.props.onCompleted();
       return;
@@ -45,8 +49,9 @@ export class TypingEffect extends React.Component<TypingEffectProps, State> {
       intervalCount: this.state.intervalCount + 1,
       interval: setTimeout(
         this.handleTick.bind(this),
-        this.props.interval * ((1 + (this.state.intervalCount / this.props.children.length) * 2))
-      )
+        this.props.interval *
+          (1 + (this.state.intervalCount / this.props.children.length) * 2)
+      ),
     });
   }
 
@@ -62,7 +67,9 @@ export class TypingEffect extends React.Component<TypingEffectProps, State> {
     return (
       <span>
         <span>{this.props.children.substr(0, clipIndex)}</span>
-        <span className={styles.hide}>{this.props.children.substr(clipIndex)}</span>
+        <span className={styles.hide}>
+          {this.props.children.substr(clipIndex)}
+        </span>
       </span>
     );
   }

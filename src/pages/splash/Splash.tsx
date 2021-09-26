@@ -1,7 +1,7 @@
-import React from "react"
-import {combineClassName} from "~/utils/combineClassName";
-import {TypingEffect} from "./comps/TypingEffect"
-import styles from "./Splash.module.scss"
+import React from "react";
+import { combineClassName } from "~/utils/combineClassName";
+import { TypingEffect } from "./comps/TypingEffect";
+import styles from "./Splash.module.scss";
 
 export const Splash = () => {
   const [scaling, setScaling] = React.useState(false);
@@ -9,7 +9,12 @@ export const Splash = () => {
 
   return (
     <div className={styles.splashWrapper}>
-      <div className={combineClassName([styles.splash, scaling ? styles.scaling : ""])}>
+      <div
+        className={combineClassName([
+          styles.splash,
+          scaling ? styles.scaling : "",
+        ])}
+      >
         <div className={styles.terminal}>
           <div>
             <span className={styles.pwd}>loxygenK/portfolio</span>
@@ -27,9 +32,16 @@ export const Splash = () => {
               find ./me | xargs open --as=portfolio
             </TypingEffect>
           </div>
-          <span className={combineClassName([styles.output, completed ? "" : styles.hide])}>Opening in the current sesison...</span>
+          <span
+            className={combineClassName([
+              styles.output,
+              completed ? "" : styles.hide,
+            ])}
+          >
+            Opening in the current sesison...
+          </span>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
