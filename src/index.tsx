@@ -4,7 +4,6 @@ import { App } from "~/App";
 
 ReactDOM.render(
   <div>
-    YESSSSSSSSSS IT WORKS
     <App />
   </div>,
   document.getElementById("app")
