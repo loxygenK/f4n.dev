@@ -1,11 +1,19 @@
 import React from "react";
+import {useHistory} from "react-router-dom";
 import { combineClassName } from "~/utils/combineClassName";
 import { TypingEffect } from "./comps/TypingEffect";
 import styles from "./Splash.module.scss";
 
 export const Splash = () => {
+  const history = useHistory();
+
   const [scaling, setScaling] = React.useState(false);
   const [completed, setCompleted] = React.useState(false);
+
+  const handleTypingEffectCompleted = () => {
+    setTimeout(() => history.push("/me"), 1250);
+    setCompleted(true);
+  }
 
   return (
     <div className={styles.splashWrapper}>
@@ -27,7 +35,7 @@ export const Splash = () => {
               delay={15}
               notifyAt={-12}
               onNotify={() => setScaling(true)}
-              onCompleted={() => setCompleted(true)}
+              onCompleted={handleTypingEffectCompleted}
             >
               find ./me | xargs open --as=portfolio
             </TypingEffect>
