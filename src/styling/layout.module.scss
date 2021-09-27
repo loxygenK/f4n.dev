@@ -1,4 +1,14 @@
-@mixin extendAbsolutely {
+@mixin extendAbsolutely($unset-horizontal: false) {
   position: absolute;
-  inset: 0 0 0 0;
+  @if $unset-horizontal {
+    left: 0;
+    right: 0;
+  } @else {
+    inset: 0 0 0 0;
+  }
+}
+
+@mixin centerize {
+  display: grid;
+  place-items: center;
 }

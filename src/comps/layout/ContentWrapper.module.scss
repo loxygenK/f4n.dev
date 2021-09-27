@@ -3,9 +3,9 @@
 @use "~/styling/layout.module.scss";
 
 .content-wrapper {
-  @include layout.extendAbsolutely;
-  background-color: color.get-theme-color(background);
+  @include layout.extendAbsolutely($unset-horizontal: true);
+  @include layout.centerize;
 
-  display: grid;
-  place-items: center;
+  background-color: color.get-theme-color(background);
+  min-height: 100%;
 }
