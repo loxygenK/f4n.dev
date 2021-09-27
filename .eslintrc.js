@@ -21,6 +21,11 @@ module.exports = {
     "react",
     "@typescript-eslint"
   ],
+  "settings": {
+    "react": {
+      "version": "detect",
+    }
+  },
   "overrides": [
     // Allow not explicitly declared return type only for components
     {
@@ -29,5 +34,5 @@ module.exports = {
         "@typescript-eslint/explicit-module-boundary-types": "off",
       }
     }
-  ]
+  ],
 };
