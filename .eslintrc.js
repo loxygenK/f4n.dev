@@ -21,6 +21,13 @@ module.exports = {
     "react",
     "@typescript-eslint"
   ],
-  "rules": {
-  }
+  "overrides": [
+    // Allow not explicitly declared return type only for components
+    {
+      "files": ["*.tsx"],
+      "rules": {
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+      }
+    }
+  ]
 };
