@@ -2,11 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { App } from "~/App";
 
-import "~/styling/font.module.scss";
+import "~/styling/base.module.scss";
 
 ReactDOM.render(
-  <div>
-    <App />
-  </div>,
+  <App />,
   document.getElementById("app")
 );
