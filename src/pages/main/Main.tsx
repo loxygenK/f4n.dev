@@ -1,5 +1,8 @@
 import React from "react";
+import {PageWrapper} from "~/comps/layout/PageWrapper";
 
 export const Main = () => (
-  <div>*Insert fancy text here*</div>
-)
+  <PageWrapper>
+    *Insert fancy text here*
+  </PageWrapper>
+);
