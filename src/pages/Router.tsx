@@ -1,11 +1,16 @@
 import React from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { ContentWrapper } from "~/comps/layout/CotentWrapper";
+import { Main } from "./main/Main";
 import { Splash } from "./splash/Splash";
 
 export const AppRouter = () => (
-  <div>
+  <ContentWrapper>
     <BrowserRouter>
-      <Route exact path="/" component={Splash} />
+      <Switch>
+        <Route exact path="/" component={Splash} />
+        <Route exact path="/me" component={Main} />
+      </Switch>
     </BrowserRouter>
-  </div>
+  </ContentWrapper>
 );

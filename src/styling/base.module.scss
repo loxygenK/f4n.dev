@@ -1,0 +1,11 @@
+@use "./font.module.scss";
+
+body {
+  @include font.use-set(base);
+
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}

@@ -62,6 +62,7 @@
     "build": "tsc && webpack",
     "type-check": "tsc",
     "dev": "webpack-dev-server",
+    "dev:type-check": "tsc --watch",
     "lint": "\"$npm_execpath\" lint:eslint && \"$npm_execpath\" lint:stylelint && \"$npm_execpath\" lint:prettier",
     "lint:eslint": "eslint './src/**/*.ts{,x}'",
     "lint:stylelint": "stylelint './src/**/*.ts{,x}'",

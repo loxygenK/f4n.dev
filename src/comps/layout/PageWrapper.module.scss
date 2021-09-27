@@ -1,0 +1,11 @@
+@use "~/styling/color.module.scss";
+@use "~/styling/layout.module.scss";
+
+.wrapper {
+  @include layout.centerize;
+
+  margin: 5em 2em;
+  width: min(50em, calc(100vw - 4em));
+
+  min-height: 100%;
+}
