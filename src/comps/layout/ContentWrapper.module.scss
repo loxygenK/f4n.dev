@@ -1,0 +1,11 @@
+@use "~/styling/color.module.scss";
+@use "~/styling/font.module.scss";
+@use "~/styling/layout.module.scss";
+
+.content-wrapper {
+  @include layout.extendAbsolutely;
+  background-color: color.get-theme-color(background);
+
+  display: grid;
+  place-items: center;
+}
