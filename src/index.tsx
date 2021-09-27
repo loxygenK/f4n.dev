@@ -4,7 +4,4 @@ import { App } from "~/App";
 
 import "~/styling/base.module.scss";
 
-ReactDOM.render(
-  <App />,
-  document.getElementById("app")
-);
+ReactDOM.render(<App />, document.getElementById("app"));

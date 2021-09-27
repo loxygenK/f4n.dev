@@ -1,5 +1,5 @@
 import React from "react";
-import {useHistory} from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { combineClassName } from "~/utils/combineClassName";
 import { TypingEffect } from "./comps/TypingEffect";
 import styles from "./Splash.module.scss";
@@ -13,7 +13,7 @@ export const Splash = () => {
   const handleTypingEffectCompleted = () => {
     setTimeout(() => history.push("/me"), 1250);
     setCompleted(true);
-  }
+  };
 
   return (
     <div className={styles.splashWrapper}>
