@@ -1,5 +1,5 @@
 import React from "react";
-import {HTMLAttributeProps} from "~/utils/types";
+import { HTMLAttributeProps } from "~/utils/types";
 
 import styles from "./LogoImage.module.scss";
 import LogoSVG from "~/asset/visual.svg";

@@ -7,6 +7,8 @@ declare module "*.scss" {
 }
 
 declare module "*.svg" {
-  const component: (props: HTMLAttributeProps<React.ReactSVGElement>) => React.ReactElement;;
+  const component: (
+    props: HTMLAttributeProps<React.ReactSVGElement>
+  ) => React.ReactElement;
   export default component;
 }

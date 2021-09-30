@@ -1,6 +1,6 @@
 import React from "react";
 import { PageWrapper } from "~/comps/layout/PageWrapper";
-import {LogoImage} from "~/comps/shared/LogoImage";
+import { LogoImage } from "~/comps/shared/LogoImage";
 
 import styles from "./Main.module.scss";
 
