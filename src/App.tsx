@@ -1,5 +1,12 @@
 import React from "react";
+import {useAPI} from "./api/setup";
 
 import { AppRouter } from "./pages/Router";
 
-export const App = () => <AppRouter />;
+const api = useAPI();
+
+export const App = () => (
+  <api.APIProvider>
+    <AppRouter />
+  </api.APIProvider>
+);
