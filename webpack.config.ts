@@ -4,6 +4,7 @@ import { Configuration as WebpackDevServerConfiguration } from 'webpack-dev-serv
 import path from "path"
 
 import HtmlWebpackPlugin from "html-webpack-plugin";
+import CopyWebpackPlugin from "copy-webpack-plugin";
 import sass from "sass";
 
 interface Configuration extends WebpackConfiguration {
@@ -53,6 +54,15 @@ const configuration: Configuration = {
             }
           }
         ]
+      },
+      {
+        test: /.svg$/,
+        use: [
+          {
+            loader: "@svgr/webpack",
+            options: { svgo: false }
+          }
+        ],
       }
     ]
   },
@@ -60,15 +70,28 @@ const configuration: Configuration = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "src", "template.html"),
       scriptLoading: "defer"
-    })
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, "asset/static"),
+          to: path.resolve(__dirname, "dist/static/"),
+          noErrorOnMissing: true,
+        },
+      ]
+    }),
   ],
   devServer: {
     static: path.join(__dirname, "dist"),
     compress: true,
     port: 4000,
-    historyApiFallback: true
+    historyApiFallback: true,
+    devMiddleware: {
+      writeToDisk: true
+    }
   },
 }
 
 export default configuration;
+
 
