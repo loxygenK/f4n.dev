@@ -1,0 +1,38 @@
+.logoImageWrapper {
+  mask[id="masker"] path {
+    stroke: rgb(255, 255, 255);
+    stroke-dasharray: 31;
+    stroke-dashoffset: 31;
+
+    animation: 2.5s anim forwards ;
+  }
+
+  g[id="main-text"] {
+    mask: url(#masker);
+  }
+
+  g[id="catear"] {
+    opacity: 0%;
+    transform: scale(1, 0.25);
+    transform-origin: 10px 9px;
+
+    animation:
+    0.6s 0.45s cubic-bezier(.27,1.48,.82,.98) forwards appear,
+    1.5s 1.0s ease-in-out alternate infinite pcpc;
+  }
+
+  @keyframes anim {
+    from { stroke-dashoffset: 31; }
+    to { stroke-dashoffset: 0; }
+  }
+
+  @keyframes appear {
+    from { transform: scale(1, 0.3) skewX(-5deg); opacity: 100%; }
+    to { transform: scale(1, 1) skewX(5deg); opacity: 100%; }
+  }
+
+  @keyframes pcpc {
+    from { transform: skewX(5deg); }
+    to { transform: skewX(-5deg); }
+  }
+}
