@@ -4,46 +4,7 @@
    height="19.51671mm"
    viewBox="0 0 63.45657 19.51671"
    version="1.1"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
-  <style>
-    g#main-text {
-      mask: url(#masker);
-    }
-
-    #masker path {
-      stroke: rgb(255, 255, 255);
-      stroke-dasharray: 31;
-      stroke-dashoffset: 31;
-
-      animation: 2.5s anim forwards ;
-    }
-
-    g#catear {
-      opacity: 0%;
-      transform: scale(1, 0.25);
-      transform-origin: 10px 9px;
-
-      animation:
-        0.6s 0.45s cubic-bezier(.27,1.48,.82,.98) forwards appear,
-        1.5s 1.0s ease-in-out alternate infinite pcpc;
-    }
-
-    @keyframes anim {
-      from { stroke-dashoffset: 31; }
-      to { stroke-dashoffset: 0; }
-    }
-
-    @keyframes appear {
-      from { transform: scale(1, 0.3) skewX(-5deg); opacity: 100%; }
-      to { transform: scale(1, 1) skewX(5deg); opacity: 100%; }
-    }
-
-    @keyframes pcpc {
-      from { transform: skewX(5deg); }
-      to { transform: skewX(-5deg); }
-    }
-  </style>
+   xmlns="http://www.w3.org/2000/svg" >
 
   <g id="catear">
     <g transform="translate(-58.119872,-72.137335)">

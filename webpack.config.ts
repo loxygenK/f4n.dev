@@ -54,6 +54,15 @@ const configuration: Configuration = {
             }
           }
         ]
+      },
+      {
+        test: /.svg$/,
+        use: [
+          {
+            loader: "@svgr/webpack",
+            options: { svgo: false }
+          }
+        ],
       }
     ]
   },
@@ -65,8 +74,9 @@ const configuration: Configuration = {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, "asset"),
-          to: path.resolve(__dirname, "dist/asset")
+          from: path.resolve(__dirname, "asset/static"),
+          to: path.resolve(__dirname, "dist/static/"),
+          noErrorOnMissing: true,
         },
       ]
     }),
@@ -75,7 +85,10 @@ const configuration: Configuration = {
     static: path.join(__dirname, "dist"),
     compress: true,
     port: 4000,
-    historyApiFallback: true
+    historyApiFallback: true,
+    devMiddleware: {
+      writeToDisk: true
+    }
   },
 }
 
