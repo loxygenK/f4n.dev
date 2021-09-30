@@ -1,3 +1,9 @@
+$masking-ease: cubic-bezier(.16,.87,.53,1);
+$catear-appear-ease: cubic-bezier(.14,1.8,.52,1.03);
+$catear-pcpc-ease: ease-in-out;
+
+$pcpc-range: 7deg;
+
 .logoImageWrapper {
   width: 100%;
   text-align: center;
@@ -7,7 +13,7 @@
     stroke-dasharray: 31;
     stroke-dashoffset: 31;
 
-    animation: 3s cubic-bezier(.16,.87,.53,1) anim forwards;
+    animation: 3s $masking-ease anim forwards;
   }
 
   g[id="main-text"] {
@@ -20,9 +26,9 @@
     transform-origin: 50% 35%;
 
     animation:
-      0.8s 0.35s cubic-bezier(.14,1.8,.52,1.03) forwards appear,
-      0.75s 1.10s ease-in-out forwards prepare-for-pcpc,
-      1.5s 1.85s ease-in-out alternate infinite pcpc;
+      0.8s 0.35s $catear-appear-ease forwards appear,
+      0.75s 1.10s $catear-pcpc-ease forwards prepare-for-pcpc,
+      1.5s 1.85s $catear-pcpc-ease alternate infinite pcpc;
   }
 
   @keyframes anim {
@@ -37,12 +43,12 @@
 
   @keyframes prepare-for-pcpc {
     from { transform: skewX(0deg); }
-    to { transform: skewX(7deg); }
+    to { transform: skewX($pcpc-range); }
   }
 
   @keyframes pcpc {
-    from { transform: skewX(7deg); }
-    to { transform: skewX(-7deg); }
+    from { transform: skewX($pcpc-range); }
+    to { transform: skewX(-$pcpc-range)}
   }
 
   @keyframes text-appear {
