@@ -4,6 +4,7 @@ import { Configuration as WebpackDevServerConfiguration } from 'webpack-dev-serv
 import path from "path"
 
 import HtmlWebpackPlugin from "html-webpack-plugin";
+import CopyWebpackPlugin from "copy-webpack-plugin";
 import sass from "sass";
 
 interface Configuration extends WebpackConfiguration {
@@ -60,7 +61,15 @@ const configuration: Configuration = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "src", "template.html"),
       scriptLoading: "defer"
-    })
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, "asset"),
+          to: path.resolve(__dirname, "dist/asset")
+        },
+      ]
+    }),
   ],
   devServer: {
     static: path.join(__dirname, "dist"),
@@ -71,4 +80,5 @@ const configuration: Configuration = {
 }
 
 export default configuration;
+
 
