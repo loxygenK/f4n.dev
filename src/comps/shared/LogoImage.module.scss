@@ -1,12 +1,14 @@
 $masking-ease: cubic-bezier(.21,.99,.37,1.01);
-$catear-appear-ease: cubic-bezier(.14,1.8,.52,1.25);
+$catear-appear-ease: cubic-bezier(.14,1.8,.52,.9);
 $catear-pcpc-ease: ease-in-out;
 
-$pcpc-range: 7deg;
+$pcpc-range: 10deg;
 
 .logoImageWrapper {
   width: 100%;
   text-align: center;
+
+  animation: 1.5s ease-out text-appear;
 
   mask[id="masker"] path {
     stroke: rgb(255, 255, 255);
@@ -21,14 +23,23 @@ $pcpc-range: 7deg;
   }
 
   g[id="catear"] {
+    transform-origin: 50% 35%;
     opacity: 0%;
     transform: scale(1, 0.25);
-    transform-origin: 50% 35%;
 
     animation:
       0.8s 0.35s $catear-appear-ease forwards appear,
       0.75s 1.10s $catear-pcpc-ease forwards prepare-for-pcpc,
       1.5s 1.85s $catear-pcpc-ease alternate infinite pcpc;
+  }
+
+  g[id="hover-extend"] {
+    transform-origin: 100% 40%;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(1, 1.2);
+    }
   }
 
   @keyframes anim {
@@ -52,7 +63,7 @@ $pcpc-range: 7deg;
   }
 
   @keyframes text-appear {
-    from { transform: scale(0.8); opacity: 0%; }
+    from { transform: scale(1.1); opacity: 0%; }
     to { transform: scale(1); opacity: 100%; }
   }
 }
