@@ -33,7 +33,7 @@ const configuration: Configuration = {
         use: ['babel-loader'],
       },
       {
-        test: /.scss/,
+        test: /\.s?css$/,
         use: [
           "style-loader",
           {
