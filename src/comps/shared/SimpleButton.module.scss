@@ -1,0 +1,13 @@
+@use "~/styling/animation.module.scss";
+@use "~/styling/color.module.scss";
+
+.wrapper {
+  padding: 0.5em 1.5em;
+
+  border: 2px solid color.get-theme-color(text-color-accent-primary);
+  line-height: 100%;
+  vertical-align: center;
+
+  @include animation.hover;
+  @include animation.click;
+}
