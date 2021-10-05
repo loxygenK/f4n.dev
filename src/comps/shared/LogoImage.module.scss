@@ -1,5 +1,5 @@
-$masking-ease: cubic-bezier(.16,.87,.53,1);
-$catear-appear-ease: cubic-bezier(.14,1.8,.52,1.03);
+$masking-ease: cubic-bezier(.21,.99,.37,1.01);
+$catear-appear-ease: cubic-bezier(.14,1.8,.52,1.25);
 $catear-pcpc-ease: ease-in-out;
 
 $pcpc-range: 7deg;
@@ -13,7 +13,7 @@ $pcpc-range: 7deg;
     stroke-dasharray: 31;
     stroke-dashoffset: 31;
 
-    animation: 3s $masking-ease anim forwards;
+    animation: 4.5s $masking-ease anim forwards;
   }
 
   g[id="main-text"] {
