@@ -7,8 +7,6 @@
 }
 
 @mixin click($duration: 0.2s, $scale: 1.05) {
-  transition: $duration all;
-
   &:active {
     transform: scale($scale);
   }
