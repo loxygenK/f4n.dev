@@ -1,8 +1,16 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
+import {CSSTransitionClassNames} from "react-transition-group/CSSTransition";
 
 import styles from "./TransitionAnimator.module.scss";
+
+const transitionClassNames: CSSTransitionClassNames = {
+          enter: styles.pageEnter,
+          enterActive: styles.pageEnterActive,
+          exit: styles.pageExit,
+          exitActive: styles.pageExitActive,
+        };
 
 export type TransitionAnimatorProps = {
   children: React.ReactNode;
@@ -18,12 +26,7 @@ export const TransitionAnimator = ({ children }: TransitionAnimatorProps) => {
       <CSSTransition
         key={location.pathname}
         timeout={300}
-        classNames={{
-          enter: styles.pageEnter,
-          enterActive: styles.pageEnterActive,
-          exit: styles.pageExit,
-          exitActive: styles.pageExitActive,
-        }}
+        classNames={transitionClassNames}
         mountOnEnter={false}
         unmountOnExit
       >
