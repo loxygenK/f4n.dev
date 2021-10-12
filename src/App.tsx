@@ -1,5 +1,5 @@
 import React from "react";
 
-import { AppRouter } from "./pages/Router";
+import { AppRouter } from "./pages/router/Router";
 
 export const App = () => <AppRouter />;

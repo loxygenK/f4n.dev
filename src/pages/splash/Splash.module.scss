@@ -6,7 +6,7 @@
   @include layout.extendAbsolutely;
   overflow: clip;
 
-  background-color: color.get-theme-color(background);
+  background-color: color.get-theme-color(background-alt);
 }
 
 .splash{

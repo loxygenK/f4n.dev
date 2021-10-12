@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styles from "./SimpleButton.module.scss";
 
 export type SimpleButtonProps = {
@@ -6,7 +7,7 @@ export type SimpleButtonProps = {
   linkTo: string;
 };
 export const SimpleButton = ({ caption, linkTo }: SimpleButtonProps) => (
-  <a href={linkTo} className={styles.wrapper}>
+  <Link to={linkTo} className={styles.wrapper}>
     <span>{caption}</span>
-  </a>
+  </Link>
 );

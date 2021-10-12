@@ -11,13 +11,13 @@
   display: grid;
 
   grid-auto-flow: column;
-  grid-auto-columns: fix-content;
-  grid-gap: 3em;
+  grid-auto-columns: max-content;
+  grid-gap: 2em;
   justify-content: center;
 
   width: 100%;
 
-  animation: 1s 1s both appear;
+  animation: 1s 1.5s both appear;
 }
 
 .logoImage {
