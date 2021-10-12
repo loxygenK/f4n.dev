@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, RouteComponentProps, Switch, useLocation, withRouter } from "react-router-dom";
+import { BrowserRouter, Route, Switch, useLocation } from "react-router-dom";
 import { ContentWrapper } from "~/comps/layout/CotentWrapper";
 import { Main } from "./main/Main";
 import { Splash } from "./splash/Splash";
@@ -9,14 +9,14 @@ export const InternalAppRouter = () => {
   const location = useLocation();
 
   return (
-      <ContentWrapper>
+    <ContentWrapper>
       <TransitionAnimator>
         <Switch location={location}>
           <Route exact path="/" component={Splash} />
           <Route exact path="/me" component={Main} />
         </Switch>
       </TransitionAnimator>
-      </ContentWrapper>
+    </ContentWrapper>
   );
 };
 
@@ -25,6 +25,5 @@ export const AppRouter = () => {
     <BrowserRouter>
       <InternalAppRouter />
     </BrowserRouter>
-  )
-
-}
+  );
+};
