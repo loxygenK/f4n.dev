@@ -1,36 +1,30 @@
 import React from "react";
-import { BrowserRouter, Route, RouteComponentProps, Switch, withRouter } from "react-router-dom";
-import { TransitionGroup, CSSTransition } from "react-transition-group";
+import { BrowserRouter, Route, RouteComponentProps, Switch, useLocation, withRouter } from "react-router-dom";
 import { ContentWrapper } from "~/comps/layout/CotentWrapper";
 import { Main } from "./main/Main";
 import { Splash } from "./splash/Splash";
+import { TransitionAnimator } from "./transition/TransitionAnimator";
 
-class InternalAppRouter extends React.Component<RouteComponentProps> {
-  render() {
-    return (
-      <ContentWrapper>
-        <TransitionGroup>
-          <CSSTransition
-            key={this.props.location.key}
-            classNames="hoge"
-            timeout={200}>
-              <Switch>
-                <Route exact path="/" component={Splash} />
-                <Route exact path="/me" component={Main} />
-              </Switch>
-          </CSSTransition>
-        </TransitionGroup>
-      </ContentWrapper>
-    );
-  }
-}
-
-export const AppRouter = () => {
-  const WithRoutered = withRouter(InternalAppRouter);
+export const InternalAppRouter = () => {
+  const location = useLocation();
 
   return (
-    <BrowserRouter>
-      <WithRoutered />
-    </BrowserRouter>
+      <ContentWrapper>
+      <TransitionAnimator>
+        <Switch location={location}>
+          <Route exact path="/" component={Splash} />
+          <Route exact path="/me" component={Main} />
+        </Switch>
+      </TransitionAnimator>
+      </ContentWrapper>
   );
 };
+
+export const AppRouter = () => {
+  return (
+    <BrowserRouter>
+      <InternalAppRouter />
+    </BrowserRouter>
+  )
+
+}
