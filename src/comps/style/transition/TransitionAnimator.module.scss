@@ -1,29 +1,70 @@
+@use "~/styling/color.module.scss";
 
-.page-enter {
-  opacity: 0;
-  transform: scale(1.1);
-  background-color: red;
-  transition: opacity 300ms, transform 300ms;
+%transition-base {
+  position: fixed;
+  z-index: 1;
+
+  &:before {
+    transition: all 750ms;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    content: "";
+    width: 170%;
+    height: 170%;
+    background-color: color.get-theme-color(background-alt);
+  }
 }
 
-.page-enter-active {
-  opacity: 1;
-  transform: scale(1);
-  transition: opacity 300ms, transform 300ms;
-  background-color: blue;
+.transition-enter {
+  @extend %transition-base;
+
+  &:before {
+    transition-delay: 650ms;
+
+    transform-origin: right top;
+    transform: skewX(-15deg) scale(1, 1);
+  }
 }
 
-.page-exit {
-  opacity: 1;
-  transform: scale(1);
-  transition: opacity 300ms, transform 300ms;
-  background-color: yellow;
+.transition-enter-active {
+  @extend %transition-base;
+
+  &:before {
+    transition-delay: 650ms;
+
+    transform-origin: right top;
+    transform: skewX(-15deg) scale(0, 1);
+  }
 }
 
-.page-exit-active {
-  opacity: 0;
-  transform: scale(0.9);
-  transition: opacity 300ms, transform 300ms;
-  background-color: green;
+.transition-exit {
+  @extend %transition-base;
+
+  &:before {
+    transform-origin: left top;
+    transform: skewX(-15deg) scale(0, 1);
+  }
+}
+
+.transition-exit-active {
+  @extend %transition-base;
+
+  &:before {
+    transform-origin: left top;
+    transform: skewX(-15deg) scale(1, 1);
+  }
+}
+
+.transition-exit-done {
+  @extend %transition-base;
+
+  &:before {
+    transform-origin: left top;
+    transform: skewX(-30deg) scale(0, 1);
+  }
 }
 

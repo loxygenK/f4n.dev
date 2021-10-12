@@ -6,10 +6,11 @@ import { CSSTransitionClassNames } from "react-transition-group/CSSTransition";
 import styles from "./TransitionAnimator.module.scss";
 
 const transitionClassNames: CSSTransitionClassNames = {
-  enter: styles.pageEnter,
-  enterActive: styles.pageEnterActive,
-  exit: styles.pageExit,
-  exitActive: styles.pageExitActive,
+  enter: styles.transitionEnter,
+  enterActive: styles.transitionEnterActive,
+  exit: styles.transitionExit,
+  exitActive: styles.transitionExitActive,
+  exitDone: styles.transitionExitDone
 };
 
 export type TransitionAnimatorProps = {
@@ -29,9 +30,12 @@ export const TransitionAnimator = ({
     <TransitionGroup>
       <CSSTransition
         key={location.pathname}
-        timeout={enableAnimation ? 300 : 0}
+        timeout={enableAnimation ? {
+          exit: 750,
+          enter: 1350
+        }: 0}
         classNames={enableAnimation ? transitionClassNames : {}}
-        mountOnEnter={false}
+        mountOnEnter
         unmountOnExit
       >
         {children}
