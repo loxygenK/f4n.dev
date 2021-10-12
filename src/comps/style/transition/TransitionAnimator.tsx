@@ -10,7 +10,7 @@ const transitionClassNames: CSSTransitionClassNames = {
   enterActive: styles.transitionEnterActive,
   exit: styles.transitionExit,
   exitActive: styles.transitionExitActive,
-  exitDone: styles.transitionExitDone
+  exitDone: styles.transitionExitDone,
 };
 
 export type TransitionAnimatorProps = {
@@ -28,7 +28,7 @@ export const TransitionAnimator = ({ children }: TransitionAnimatorProps) => {
         key={location.pathname}
         timeout={{
           exit: 750,
-          enter: 1350
+          enter: 1350,
         }}
         classNames={transitionClassNames}
         mountOnEnter
