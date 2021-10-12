@@ -7,17 +7,14 @@ import { routingTable } from "./routing";
 export const InternalAppRouter = () => {
   const location = useLocation();
 
-  const enableAnimation =
-    routingTable.find((p) => p.path == location.pathname)
-      ?.transactionAnimation ?? true;
-
   return (
-    <TransitionAnimator enableAnimation={enableAnimation}>
+    <TransitionAnimator>
       <ContentWrapper>
         <Switch location={location}>
           {routingTable.map((r, i) => (
             <Route key={i} {...r} />
           ))}
+          <Route path="/about" component={() => <div>Hello!</div>} />
         </Switch>
       </ContentWrapper>
     </TransitionAnimator>
