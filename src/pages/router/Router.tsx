@@ -1,19 +1,21 @@
 import React from "react";
 import { BrowserRouter, Route, Switch, useLocation } from "react-router-dom";
 import { ContentWrapper } from "~/comps/layout/CotentWrapper";
-import { Main } from "./main/Main";
-import { Splash } from "./splash/Splash";
-import { TransitionAnimator } from "./transition/TransitionAnimator";
+import { TransitionAnimator } from "~/pages/transition/TransitionAnimator";
+import {routingTable} from "./routing";
 
 export const InternalAppRouter = () => {
   const location = useLocation();
 
+  const enableAnimation = routingTable.find((p) => p.path == location.pathname)?.transactionAnimation ?? true;
+
   return (
     <ContentWrapper>
-      <TransitionAnimator>
+      <TransitionAnimator enableAnimation={enableAnimation}>
         <Switch location={location}>
-          <Route exact path="/" component={Splash} />
-          <Route exact path="/me" component={Main} />
+          {
+            routingTable.map((r, i) => <Route key={i} {...r} />)
+          }
         </Switch>
       </TransitionAnimator>
     </ContentWrapper>

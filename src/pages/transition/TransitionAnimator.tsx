@@ -14,9 +14,10 @@ const transitionClassNames: CSSTransitionClassNames = {
 
 export type TransitionAnimatorProps = {
   children: React.ReactNode;
+  enableAnimation: boolean
 };
 
-export const TransitionAnimator = ({ children }: TransitionAnimatorProps) => {
+export const TransitionAnimator = ({ children, enableAnimation }: TransitionAnimatorProps) => {
   const location = useLocation();
 
   console.log(location.pathname);
@@ -25,8 +26,8 @@ export const TransitionAnimator = ({ children }: TransitionAnimatorProps) => {
     <TransitionGroup>
       <CSSTransition
         key={location.pathname}
-        timeout={300}
-        classNames={transitionClassNames}
+        timeout={enableAnimation ? 300 : 0}
+        classNames={enableAnimation ? transitionClassNames : {}}
         mountOnEnter={false}
         unmountOnExit
       >
