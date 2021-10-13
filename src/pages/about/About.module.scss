@@ -1,0 +1,11 @@
+@use "~/styling/color.module.scss";
+@use "~/styling/layout.module.scss";
+
+.container {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 25% 75%;
+  grid-gap: 1.5em;
+  width: 100%;
+}
+
