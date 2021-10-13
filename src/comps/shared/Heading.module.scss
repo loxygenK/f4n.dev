@@ -1,0 +1,29 @@
+@use "~/styling/font.module.scss";
+@use "~/styling/color.module.scss";
+
+.heading {
+  display: grid;
+  grid-gap: 0.5rem;
+
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  align-items: end;
+
+  width: 100%;
+  margin-bottom: 0.5em;
+  padding-bottom: 0.25em;
+
+  border-bottom: 2px solid color.get-theme-color(text-color-accent-primary);
+
+  * {
+    line-height: 100%;
+  }
+}
+
+.sub-text {
+  @include font.use-set(monospace);
+  color: color.get-theme-color(text-color-secondary);
+
+  font-size: 0.85rem;
+  font-weight: normal;
+}
