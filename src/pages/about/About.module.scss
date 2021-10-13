@@ -4,7 +4,7 @@
 .container {
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: 25% 75%;
+  grid-auto-columns: 1fr 2fr;
   grid-gap: 1.5em;
   width: 100%;
 }
