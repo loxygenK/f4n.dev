@@ -74,7 +74,7 @@ const configuration: Configuration = {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, "asset/static"),
+          from: path.resolve(__dirname, "static"),
           to: path.resolve(__dirname, "dist/static/"),
           noErrorOnMissing: true,
         },

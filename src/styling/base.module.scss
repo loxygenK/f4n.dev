@@ -1,4 +1,5 @@
 @use "./font.module.scss";
+@use "./color.module.scss";
 
 body {
   @include font.use-set(base);
@@ -11,6 +12,14 @@ body {
 }
 
 a {
-  color: unset;
+  color: color.get-theme-color(text-color-accent-secondary);
   text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @include font.use-set(heading);
 }

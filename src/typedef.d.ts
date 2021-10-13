@@ -12,3 +12,12 @@ declare module "*.svg" {
   ) => React.ReactElement;
   export default component;
 }
+
+declare module "react-twemoji" {
+  const Twemoji: (props: {
+    children: React.ReactNode;
+    noWrapper?: boolean;
+    tag?: string;
+  }) => React.ReactElement;
+  export default Twemoji;
+}
