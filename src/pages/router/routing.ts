@@ -1,7 +1,7 @@
 import { RouteProps } from "react-router-dom";
 import { Splash } from "~/pages/splash/Splash";
 import { Main } from "~/pages/main/Main";
-import {About} from "../about/About";
+import { About } from "../about/About";
 
 export const routingTable: RouteProps[] = [
   { path: "/", component: Splash, exact: true },

@@ -1,6 +1,5 @@
 import React from "react";
-import Twemoji from "react-twemoji";
-import {Emoji} from "./Emoji";
+import { Emoji } from "./Emoji";
 
 import styles from "./Heading.module.scss";
 
@@ -9,11 +8,11 @@ export type HeadingProps = {
   emoji: string;
   sub: string;
 };
-export const Heading = ({children, emoji, sub}: HeadingProps) => (
+export const Heading = ({ children, emoji, sub }: HeadingProps) => (
   <h1 className={styles.heading}>
     <Emoji emoji={emoji} />
     <span>{children}</span>
     {/* eslint-disable-next-line react/jsx-no-comment-textnodes */}
     <span className={styles.subText}>// {sub}</span>
   </h1>
-)
+);
