@@ -10,7 +10,7 @@ export type LogoProps = {
 export const LogoImage: React.VFC<LogoProps> = ({enableAnimation = true, ...props}) => {
   return (
     <div
-      className={`${styles.logoImageWrapper} ${enableAnimation ? styles.a: ""}`}
+      className={`${styles.logoImageWrapper} ${enableAnimation ? styles.enableAnimation: ""}`}
     >
       <LogoSVG {...props} />
     </div>

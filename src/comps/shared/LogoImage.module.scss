@@ -3,7 +3,6 @@ $catear-appear-ease: cubic-bezier(.14,1.8,.52,.9);
 $catear-pcpc-ease: ease-in-out;
 
 $pcpc-range: 10deg;
-@use "./LogoImage.animation.module.scss";
 
 .logoImageWrapper {
   width: 100%;
@@ -18,9 +17,8 @@ $pcpc-range: 10deg;
   [id="masker"] path {
       stroke: white;
       stroke-dasharray: 31;
-      stroke-dashoffset: 31;
 
-      animation: 4.5s 0.75s $masking-ease anim forwards;
+      animation: 4.5s 0.75s $masking-ease appear-mask forwards;
   }
 
   g[id="hover-extend"] {
@@ -32,7 +30,7 @@ $pcpc-range: 10deg;
     }
   }
 
-  &.a {
+  &.enable-animation {
     animation:
       1.5s 0.75s ease-out text-appear-scale,
       0.75s 0.75s ease-out text-appear-opacity;
@@ -47,31 +45,29 @@ $pcpc-range: 10deg;
       transform: scale(1, 0.25);
 
       animation:
-        0.8s 1.35s $catear-appear-ease forwards appear,
-        0.75s 2.10s $catear-pcpc-ease forwards prepare-for-pcpc,
-        1.5s 2.85s $catear-pcpc-ease alternate infinite pcpc;
+        0.8s 1.35s $catear-appear-ease forwards catear-appear,
+        0.75s 2.10s $catear-pcpc-ease forwards catear-prepare-for-pcpc,
+        1.5s 2.85s $catear-pcpc-ease alternate infinite catear-pcpc;
     }
   }
-
-
 }
 
-@keyframes anim {
+@keyframes appear-mask {
   from { stroke-dashoffset: 31; }
   to { stroke-dashoffset: 0; }
 }
 
-@keyframes appear {
+@keyframes catear-appear {
   from { transform: scale(1, 0.3); opacity: 100%; }
   to { transform: scale(1, 1); opacity: 100%; }
 }
 
-@keyframes prepare-for-pcpc {
+@keyframes catear-prepare-for-pcpc {
   from { transform: skewX(0deg); }
   to { transform: skewX($pcpc-range); }
 }
 
-@keyframes pcpc {
+@keyframes catear-pcpc {
   from { transform: skewX($pcpc-range); }
   to { transform: skewX(-$pcpc-range)}
 }
