@@ -1,5 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import {quickNavigations} from "~/pages/router/routing";
 import {LogoImage} from "../shared/LogoImage";
 
 import styles from "./Header.module.scss";
@@ -11,10 +12,15 @@ export const Header: React.VFC = () => (
     </Link>
     <nav>
       <ol className={styles.navigation}>
-        <li className={styles.navigationItem}><span>123</span></li>
-        <li className={styles.navigationItem}><span>123</span></li>
-        <li className={styles.navigationItem}><span>123</span></li>
-        <li className={styles.navigationItem}><span>123</span></li>
+        {
+          quickNavigations.map(
+            (nav, index) => (
+              <li className={styles.navigationItem} key={index}>
+                <Link to={nav.path}><span>{nav.caption}</span></Link>
+              </li>
+            )
+          )
+        }
       </ol>
     </nav>
   </div>
