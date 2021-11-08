@@ -1,0 +1,43 @@
+@use "~/styling/color.module.scss";
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+
+  background-color: rgba(color.get-theme-color(background-thin), 0.5);
+
+  padding: 0em 3em;
+}
+
+.icon {
+  height: 2.5em;
+  margin: 0.75em 0;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  
+  gap: 3em;
+
+  &-item {
+    list-style-type: none;
+
+    color: color.get-theme-color(text-color-secondary);
+
+    transition: 0.1s all;
+    &:hover {
+      color: color.get-theme-color(text-color);
+      cursor: pointer;
+
+      transform: scale(1.1);
+    }
+  }
+}
