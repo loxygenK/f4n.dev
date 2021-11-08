@@ -2,7 +2,7 @@
 
 %transition-base {
   position: fixed;
-  z-index: 1;
+  z-index: 200;
 
   &:before {
     transition: all 750ms;
@@ -10,12 +10,12 @@
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: 200;
 
     content: "";
     width: 170%;
     height: 170%;
-    background-color: color.get-theme-color(background-alt);
+    background-color: color.get-theme-color(background-thin);
   }
 }
 
