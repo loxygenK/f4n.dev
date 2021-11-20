@@ -13,6 +13,7 @@
   align-items: stretch;
 
   background-color: rgba(color.get-theme-color(background-thin), 0.95);
+  box-shadow: 0 -5px 5px 5px color.get-theme-color(shadow-color);
 
   padding: 0em 3em;
 

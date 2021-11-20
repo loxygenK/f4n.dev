@@ -11,6 +11,7 @@ $theme-color: (
   text-color-accent-primary: #e36de1,
   text-color-accent-secondary: #697db3,
   terminal-accent: #845683,
+  shadow-color: rgba(#000000, 0.25)
 );
 
 @function get-theme-color($name) {
