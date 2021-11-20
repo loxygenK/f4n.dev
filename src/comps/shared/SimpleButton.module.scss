@@ -1,0 +1,47 @@
+@use "~/styling/animation.module.scss";
+@use "~/styling/color.module.scss";
+
+$skew_original: -15deg;
+
+.wrapper {
+  position: relative;
+
+  padding: 0.5em 1.5em;
+  overflow: hidden;
+
+  border: 2px solid color.get-theme-color(text-color-accent-primary);
+  line-height: 100%;
+  vertical-align: middle;
+
+  transition: 0.2s all;
+
+  &:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    z-index: -1;
+    content: "";
+    width: 110%;
+    height: 100%;
+    background: color.get-theme-color(background-alt);
+    transform-origin: right top;
+    transform: skewX($skew_original) scale(0, 1);
+    transition: 0.4s transform;
+  }
+
+  &:hover {
+    transform: scale(1.10);
+
+    &:before {
+      transform-origin: left top;
+      transform: skewX($skew_original) scale(1, 1);
+    }
+  }
+
+  &:active {
+    transform: scale(1.05);
+  }
+
+  @include animation.click;
+}

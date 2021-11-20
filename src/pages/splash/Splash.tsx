@@ -11,7 +11,7 @@ export const Splash = () => {
   const [completed, setCompleted] = React.useState(false);
 
   const handleTypingEffectCompleted = () => {
-    setTimeout(() => history.push("/me"), 1250);
+    setTimeout(() => history.push("/me"), 1000);
     setCompleted(true);
   };
 

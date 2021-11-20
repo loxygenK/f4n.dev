@@ -1,3 +1,10 @@
+@use "./util.module.scss";
+
+$breakpoints: (
+  "tablet": "screen and (max-width: 767px)",
+  "phone": "screen and (max-width: 399px)",
+);
+
 @mixin extendAbsolutely($unset-horizontal: false) {
   position: absolute;
   @if $unset-horizontal {
@@ -9,6 +16,15 @@
 }
 
 @mixin centerize {
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin for($breakpoint) {
+  @media #{util.map-get-with-error($breakpoints, $breakpoint, "The breakpoint")} {
+    @content;
+  }
 }

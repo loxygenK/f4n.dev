@@ -2,10 +2,16 @@
 
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400&display=swap');
 
+$__set-base: "IBM Plex Sans", "M PLUS Rounded 1c";
+$__set-heading: "IBM Plex Sans", "M PLUS 1p";
+$__set-monospace: IBM Plex Mono;
 $font-set: (
-  "base": "IBM Plex Sans",
-  "monospace": "IBM Plex Mono",
+  "base": $__set-base,
+  "heading": $__set-heading,
+  "monospace": $__set-monospace,
 );
 
 @mixin use-set($name) {

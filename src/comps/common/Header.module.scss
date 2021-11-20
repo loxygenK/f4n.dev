@@ -1,0 +1,54 @@
+@use "~/styling/color.module.scss";
+@use "~/styling/layout.module.scss";
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+
+  background-color: rgba(color.get-theme-color(background-thin), 0.95);
+  box-shadow: 0 -5px 5px 5px color.get-theme-color(shadow-color);
+
+  padding: 0em 3em;
+
+  @include layout.for(tablet) {
+    justify-content: center;
+  }
+}
+
+.icon {
+  height: 2.5em;
+  margin: 0.75em 0;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  height: 100%;
+
+  gap: 3em;
+
+  &-item {
+    list-style-type: none;
+
+    color: color.get-theme-color(text-color-secondary);
+
+    transition: 0.1s all;
+    &:hover {
+      color: color.get-theme-color(text-color);
+      cursor: pointer;
+
+      transform: scale(1.1);
+    }
+  }
+
+  @include layout.for(tablet) {
+    display: none;
+  }
+}

@@ -1,7 +1,7 @@
 import React from "react";
-import {useAPI} from "./api/setup";
+import { useAPI } from "./api/setup";
 
-import { AppRouter } from "./pages/Router";
+import { AppRouter } from "./pages/router/Router";
 
 const api = useAPI();
 

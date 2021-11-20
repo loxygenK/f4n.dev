@@ -1,0 +1,83 @@
+$masking-ease: cubic-bezier(.21,.99,.37,1.01);
+$catear-appear-ease: cubic-bezier(.14,1.8,.52,.9);
+$catear-pcpc-ease: ease-in-out;
+
+$pcpc-range: 10deg;
+
+.logoImageWrapper {
+  width: 100%;
+  text-align: center;
+
+  g[id="catear"] {
+    transform-origin: 50% 35%;
+    animation:
+      2.85s $catear-pcpc-ease alternate infinite pcpc;
+  }
+
+  [id="masker"] path {
+      stroke: white;
+      stroke-dasharray: 31;
+
+      animation: 4.5s 0.75s $masking-ease appear-mask forwards;
+  }
+
+  g[id="hover-extend"] {
+    transform-origin: 100% 40%;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(1, 1.2);
+    }
+  }
+
+  &.enable-animation {
+    animation:
+      1.5s 0.75s ease-out text-appear-scale,
+      0.75s 0.75s ease-out text-appear-opacity;
+
+    g[id="main-text"] {
+      mask: url(#masker);
+    }
+
+    g[id="catear"] {
+      transform-origin: 50% 35%;
+      opacity: 0%;
+      transform: scale(1, 0.25);
+
+      animation:
+        0.8s 1.35s $catear-appear-ease forwards catear-appear,
+        0.75s 2.10s $catear-pcpc-ease forwards catear-prepare-for-pcpc,
+        1.5s 2.85s $catear-pcpc-ease alternate infinite catear-pcpc;
+    }
+  }
+}
+
+@keyframes appear-mask {
+  from { stroke-dashoffset: 31; }
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes catear-appear {
+  from { transform: scale(1, 0.3); opacity: 100%; }
+  to { transform: scale(1, 1); opacity: 100%; }
+}
+
+@keyframes catear-prepare-for-pcpc {
+  from { transform: skewX(0deg); }
+  to { transform: skewX($pcpc-range); }
+}
+
+@keyframes catear-pcpc {
+  from { transform: skewX($pcpc-range); }
+  to { transform: skewX(-$pcpc-range)}
+}
+
+@keyframes text-appear-scale {
+  from { transform: scale(1.1); }
+  to { transform: scale(1); }
+}
+
+@keyframes text-appear-opacity {
+  from { opacity: 0%; }
+  to { opacity: 100%; }
+}

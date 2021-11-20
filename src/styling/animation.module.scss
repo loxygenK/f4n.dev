@@ -1,0 +1,13 @@
+@mixin hover($duration: 0.2s, $scale: 1.1) {
+  transition: $duration all;
+
+  &:hover {
+    transform: scale($scale);
+  }
+}
+
+@mixin click($duration: 0.2s, $scale: 1.05) {
+  &:active {
+    transform: scale($scale);
+  }
+}
