@@ -32,8 +32,8 @@ $pcpc-range: 10deg;
 
   &.enable-animation {
     animation:
-      1.5s 0.75s ease-out text-appear-scale,
-      0.75s 0.75s ease-out text-appear-opacity;
+      1.5s 0.75s ease-out forwards text-appear-scale,
+      0.75s 0.75s ease-out both text-appear-opacity;
 
     g[id="main-text"] {
       mask: url(#masker);
