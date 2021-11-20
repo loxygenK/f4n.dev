@@ -1,2 +1,9 @@
 node_modules/
 dist/
+
+# Scheme file
+# (See README.md how to generate this file)
+src/api/graphql/autogen
+
+# Introspection file
+.graphql/
