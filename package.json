@@ -72,14 +72,15 @@
     "type-check": "tsc",
     "dev": "webpack-dev-server",
     "dev:type-check": "tsc --watch",
-    "lint": "\"$npm_execpath\" lint:eslint && \"$npm_execpath\" lint:stylelint && \"$npm_execpath\" lint:prettier",
+    "lint": "\"$npm_execpath\" lint:ts && \"$npm_execpath\" lint:eslint && \"$npm_execpath\" lint:stylelint && \"$npm_execpath\" lint:prettier",
     "lint:eslint": "eslint './src/**/*.ts{,x}'",
     "lint:stylelint": "stylelint './src/**/*.ts{,x}'",
     "lint:prettier": "prettier -c './src/**/*.ts{,x}'",
+    "lint:ts": "tsc --noEmit",
     "fix": "\"$npm_execpath\" fix:prettier && \"$npm_execpath\" fix:eslint && \"$npm_execpath\" fix:stylelint",
     "fix:eslint": "\"$npm_execpath\" lint:eslint -- --fix",
     "fix:stylelint": "\"$npm_execpath\" lint:stylelint -- --fix",
     "fix:prettier": "\"$npm_execpath\" lint:prettier -- -w",
-    "prepare": "husky install"
+    "prepare": "husky install .hooks/.husky"
   }
 }
