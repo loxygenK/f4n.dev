@@ -4,7 +4,7 @@ import { Setupper, SetupperProps } from "../setup";
 
 const apolloClient = new ApolloClient({
   // TODO: Change this from the environment variable
-  uri: "http://localhost:8000",
+  uri: "http://localhost:8000/graphql",
   cache: new InMemoryCache(),
 });
 
