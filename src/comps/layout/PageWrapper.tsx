@@ -1,4 +1,5 @@
 import React from "react";
+import {Header} from "../common/Header";
 import styles from "./PageWrapper.module.scss";
 
 export type PageWrapperProps = {
@@ -6,5 +7,8 @@ export type PageWrapperProps = {
   children: React.ReactNode;
 };
 export const PageWrapper = (props: PageWrapperProps) => (
-  <div className={styles.wrapper}>{props.children}</div>
+  <div>
+    <Header />
+    <div className={styles.wrapper}>{props.children}</div>
+  </div>
 );

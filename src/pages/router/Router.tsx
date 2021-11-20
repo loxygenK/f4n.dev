@@ -11,7 +11,6 @@ export const InternalAppRouter = () => {
   return (
     <TransitionAnimator>
       <ContentWrapper>
-        <Header />
         <Switch location={location}>
           {routingTable.map((r, i) => (
             <Route key={i} {...r} />
