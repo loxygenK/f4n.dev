@@ -8,31 +8,17 @@ $pcpc-range: 10deg;
   width: 100%;
   text-align: center;
 
-  animation:
-    1.5s 0.75s ease-out text-appear-scale,
-    0.75s 0.75s ease-out text-appear-opacity;
-
-  mask[id="masker"] path {
-    stroke: rgb(255, 255, 255);
-    stroke-dasharray: 31;
-    stroke-dashoffset: 31;
-
-    animation: 4.5s 0.75s $masking-ease anim forwards;
-  }
-
-  g[id="main-text"] {
-    mask: url(#masker);
-  }
-
   g[id="catear"] {
     transform-origin: 50% 35%;
-    opacity: 0%;
-    transform: scale(1, 0.25);
-
     animation:
-      0.8s 1.35s $catear-appear-ease forwards appear,
-      0.75s 2.10s $catear-pcpc-ease forwards prepare-for-pcpc,
-      1.5s 2.85s $catear-pcpc-ease alternate infinite pcpc;
+      2.85s $catear-pcpc-ease alternate infinite pcpc;
+  }
+
+  [id="masker"] path {
+      stroke: white;
+      stroke-dasharray: 31;
+
+      animation: 4.5s 0.75s $masking-ease appear-mask forwards;
   }
 
   g[id="hover-extend"] {
@@ -44,33 +30,54 @@ $pcpc-range: 10deg;
     }
   }
 
-  @keyframes anim {
-    from { stroke-dashoffset: 31; }
-    to { stroke-dashoffset: 0; }
-  }
+  &.enable-animation {
+    animation:
+      1.5s 0.75s ease-out text-appear-scale,
+      0.75s 0.75s ease-out text-appear-opacity;
 
-  @keyframes appear {
-    from { transform: scale(1, 0.3); opacity: 100%; }
-    to { transform: scale(1, 1); opacity: 100%; }
-  }
+    g[id="main-text"] {
+      mask: url(#masker);
+    }
 
-  @keyframes prepare-for-pcpc {
-    from { transform: skewX(0deg); }
-    to { transform: skewX($pcpc-range); }
-  }
+    g[id="catear"] {
+      transform-origin: 50% 35%;
+      opacity: 0%;
+      transform: scale(1, 0.25);
 
-  @keyframes pcpc {
-    from { transform: skewX($pcpc-range); }
-    to { transform: skewX(-$pcpc-range)}
+      animation:
+        0.8s 1.35s $catear-appear-ease forwards catear-appear,
+        0.75s 2.10s $catear-pcpc-ease forwards catear-prepare-for-pcpc,
+        1.5s 2.85s $catear-pcpc-ease alternate infinite catear-pcpc;
+    }
   }
+}
 
-  @keyframes text-appear-scale {
-    from { transform: scale(1.1); }
-    to { transform: scale(1); }
-  }
+@keyframes appear-mask {
+  from { stroke-dashoffset: 31; }
+  to { stroke-dashoffset: 0; }
+}
 
-  @keyframes text-appear-opacity {
-    from { opacity: 0%; }
-    to { opacity: 100%; }
-  }
+@keyframes catear-appear {
+  from { transform: scale(1, 0.3); opacity: 100%; }
+  to { transform: scale(1, 1); opacity: 100%; }
+}
+
+@keyframes catear-prepare-for-pcpc {
+  from { transform: skewX(0deg); }
+  to { transform: skewX($pcpc-range); }
+}
+
+@keyframes catear-pcpc {
+  from { transform: skewX($pcpc-range); }
+  to { transform: skewX(-$pcpc-range)}
+}
+
+@keyframes text-appear-scale {
+  from { transform: scale(1.1); }
+  to { transform: scale(1); }
+}
+
+@keyframes text-appear-opacity {
+  from { opacity: 0%; }
+  to { opacity: 100%; }
 }
