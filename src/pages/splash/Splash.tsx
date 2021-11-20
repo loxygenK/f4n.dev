@@ -1,7 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { combineClassName } from "~/utils/combineClassName";
-import { TypingEffect } from "./comps/TypingEffect";
+import { TypingEffect } from "./organisms/TypingEffect";
 import styles from "./Splash.module.scss";
 
 export const Splash = () => {
