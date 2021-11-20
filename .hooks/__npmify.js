@@ -2,10 +2,13 @@
 const child_process = require("child_process");
 const prettify = require("./__prettify");
 
-function executeNpm(command, description) {
+function executeNpm(command, description, redirect = false) {
   prettify.progress(`Executing ${description} (pnpm ${command})...`);
 
-  const child = child_process.spawnSync("pnpm", ["--silent", command]);
+  const child = child_process.spawnSync(
+    "pnpm", ["--silent", command],
+    (redirect ? { stdio: "inherit" } : undefined)
+  );
 
   if(child.status !== 0) {
     prettify.warn(`Something went wrong (exit code: ${child.status})`)
