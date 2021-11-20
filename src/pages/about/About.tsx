@@ -3,8 +3,8 @@ import { PageWrapper } from "~/comps/layout/PageWrapper";
 import { Heading } from "~/comps/shared/Heading";
 
 import styles from "./About.module.scss";
-import { Avatar } from "./Avatar";
-import { Introduction } from "./Introduction";
+import { Avatar } from "./atoms/Avatar";
+import { Introduction } from "./organisms/Introduction";
 
 export const About = () => (
   <PageWrapper>

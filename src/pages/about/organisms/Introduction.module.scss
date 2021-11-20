@@ -1,15 +1,18 @@
 @use "~/styling/color.module.scss";
 @use "~/styling/font.module.scss";
 
-.wrapper {
+%list {
   display: flex;
   flex-direction: column;
+}
+
+.wrapper {
+  @extend %list;
   gap: 0.5em;
 }
 
-.name, .affiriation {
-  display: flex;
-  flex-direction: column;
+.name {
+  @extend %list;
 }
 
 .primary {
@@ -20,15 +23,12 @@
   line-height: 110%;
 }
 
-.element {
-  display: flex;
-  flex-direction: column;
-}
-
 .aka {
   color: color.get-theme-color(text-color-secondary)
 }
 
-.location {
-  font-size: 1.25em;
+.affiriation {
+  @extend %list;
+  gap: 0.5em;
 }
+
