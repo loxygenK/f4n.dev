@@ -29,7 +29,7 @@ export const SkillList: React.VFC<SkillListProps> = ({
         {(data) => (
           <div className={styles.skillListContainer}>
             {data.skills.map((s, i) => (
-              <Skill caption={s.name} level={s.level} key={i} />
+              <Skill caption={s.name} level={s.level} emoji={s.emoji} key={i} />
             ))}
           </div>
         )}

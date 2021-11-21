@@ -8,6 +8,11 @@
   padding: 0.5em 0.75em;
 }
 
+.separator {
+  color: darken(color.get-theme-color(background-alt), 15);
+  margin: 0 0.2em 0 0.1em;
+}
+
 .name {
   font-size: 1.6em;
   font-weight: 700;

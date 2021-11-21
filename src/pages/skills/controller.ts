@@ -7,6 +7,7 @@ const FetchSkills = gql`
       name
       skillType
       level
+      emoji
     }
   }
 `;

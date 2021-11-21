@@ -1,5 +1,6 @@
 import React from "react";
 import { SkilledLevel } from "~/api/graphql/autogen/scheme";
+import { Emoji } from "~/comps/shared/Emoji";
 import { combineClassName } from "~/utils/combineClassName";
 
 import styles from "./Skill.module.scss";
@@ -15,10 +16,15 @@ const skilledLevelToCaption: { [key in SkilledLevel]: string } = {
 export type SkillProps = {
   caption: string;
   level: SkilledLevel;
+  emoji: string;
 };
-export const Skill: React.VFC<SkillProps> = ({ caption, level }) => (
+export const Skill: React.VFC<SkillProps> = ({ caption, level, emoji }) => (
   <div className={styles.container}>
     <span className={styles.name}>{caption}</span>
-    <span className={styles.level}>{skilledLevelToCaption[level]}</span>
+    <span className={styles.level}>
+      <Emoji emoji={emoji} />
+      <span className={styles.separator}>･</span>
+      {skilledLevelToCaption[level]}
+    </span>
   </div>
 );
