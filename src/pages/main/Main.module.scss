@@ -1,3 +1,5 @@
+@use "~/styling/layout.module.scss";
+
 .main-page-wrapper {
 
   display: grid;
@@ -18,10 +20,17 @@
   width: 100%;
 
   animation: 1s 1.5s both appear;
+
+  text-align: center;
+
+  @include layout.for(tablet) {
+    grid-auto-flow: row;
+    grid-gap: 1em;
+  }
 }
 
 .logoImage {
-  width: min(80%, 30em);
+  max-width: min(90%, 30em);
 }
 
 @keyframes appear {

@@ -12,7 +12,7 @@ body {
 }
 
 a {
-  color: color.get-theme-color(text-color-accent-secondary);
+  color: color.get-theme-color(link-color);
   text-decoration: none;
 
   &:hover {
