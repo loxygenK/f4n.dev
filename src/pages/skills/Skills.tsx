@@ -18,7 +18,7 @@ const skillListTable: Map<
 
 export const Skills = () => (
   <PageWrapper>
-    <Heading sub="skills" emoji="📝">
+    <Heading sub="skills" emoji="🪄">
       スキル
     </Heading>
     <div className={styles.container}>
