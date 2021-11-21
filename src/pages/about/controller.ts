@@ -1,5 +1,5 @@
 import { gql, useQuery } from "@apollo/client";
-import { Basic } from "~/api/graphql/autogen/scheme";
+import { Basic, Contact } from "~/api/graphql/autogen/scheme";
 
 const fetchBasic = gql`
   query FetchBasic {
@@ -15,9 +15,14 @@ const fetchBasic = gql`
       }
       age
     }
+    contacts {
+      service
+      identifier
+      url
+    }
   }
 `;
-type FetchIntroductionResponse = { basic: Basic };
+type FetchIntroductionResponse = { basic: Basic; contacts: Contact[] };
 
 export const useBasicAPI = () =>
   useQuery<FetchIntroductionResponse>(fetchBasic);
