@@ -1,6 +1,7 @@
 import React from "react";
 import { AwaitFetch } from "~/comps/shared/AwaitFetch";
 import { Affiliation } from "../atoms/Affiriation";
+import { Contact } from "../atoms/Contact";
 import { useBasicAPI } from "../controller";
 
 import styles from "./Introduction.module.scss";
@@ -17,6 +18,11 @@ export const Introduction = () => {
             <span className={styles.aka}>
               {data.basic.name.aka.join(" / ")}
             </span>
+          </div>
+          <div className={styles.contacts}>
+            {data.contacts.map((c, i) => (
+              <Contact {...c} key={i} />
+            ))}
           </div>
           <div className={styles.affiriation}>
             {data.basic.affiliation.map((a, key) => (

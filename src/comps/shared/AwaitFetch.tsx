@@ -1,6 +1,5 @@
 import React from "react";
 
-import styles from "./AwaitFetch.module.scss";
 import { Emoji } from "./Emoji";
 
 export type AwaitFetchProps<T> = {
