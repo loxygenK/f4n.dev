@@ -1,0 +1,59 @@
+@use "~/styling/color.module.scss";
+
+.container {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+
+  padding: 0.5em 1em;
+  overflow: hidden;
+
+  background-color: color.get-theme-color(background-alt);
+}
+
+.work-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 1.8em;
+  font-weight: 700;
+
+  overflow-wrap: anywhere;
+}
+
+.tags {
+  font-size: 0.85em;
+  line-height: 105%;
+
+  color: color.get-theme-color(text-color-secondary);
+}
+
+.url {
+  font-size: 0.85em;
+  overflow-wrap: anywhere;
+}
+
+.separator {
+  border-bottom: 2px dotted darken(color.get-theme-color(background-alt), 10);
+}
+
+.status-band {
+  position: absolute;
+  top: 1.5em;
+  right: -2.75em;
+
+  width: 10em;
+  transform: rotate(45deg);
+
+  background-color: darken(color.get-theme-color(background-alt), 15);
+  box-shadow: 0 0 3px color.get-theme-color(shadow-color);
+  color: white;
+
+  padding: 0.1em 0;
+
+  text-align: center;
+}

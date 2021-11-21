@@ -1,0 +1,13 @@
+@use "~/styling/layout.module.scss";
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1em;
+
+  width: 100%;
+
+  @include layout.for(tablet) {
+    grid-template-columns: 1fr;
+  }
+}
