@@ -1,6 +1,5 @@
 import React from "react";
 import { AwaitFetch } from "~/comps/shared/AwaitFetch";
-import { SimpleButton } from "~/comps/shared/SimpleButton";
 import { Affiliation } from "../atoms/Affiriation";
 import { Contact } from "../atoms/Contact";
 import { useBasicAPI } from "../controller";

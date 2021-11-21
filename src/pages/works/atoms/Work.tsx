@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { Status, Work as WorkEntity } from "~/api/graphql/autogen/scheme";
 
 import styles from "./Work.module.scss";

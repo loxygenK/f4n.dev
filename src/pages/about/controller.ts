@@ -1,4 +1,4 @@
-import { gql, useQuery } from "@apollo/client";
+import { gql, QueryResult, useQuery } from "@apollo/client";
 import { Basic, Contact } from "~/api/graphql/autogen/scheme";
 
 const fetchBasic = gql`
@@ -24,5 +24,5 @@ const fetchBasic = gql`
 `;
 type FetchIntroductionResponse = { basic: Basic; contacts: Contact[] };
 
-export const useBasicAPI = () =>
+export const useBasicAPI = (): QueryResult<FetchIntroductionResponse> =>
   useQuery<FetchIntroductionResponse>(fetchBasic);

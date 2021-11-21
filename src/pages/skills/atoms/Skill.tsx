@@ -1,7 +1,6 @@
 import React from "react";
 import { SkilledLevel } from "~/api/graphql/autogen/scheme";
 import { Emoji } from "~/comps/shared/Emoji";
-import { combineClassName } from "~/utils/combineClassName";
 
 import styles from "./Skill.module.scss";
 
