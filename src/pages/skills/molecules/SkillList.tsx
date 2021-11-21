@@ -5,6 +5,8 @@ import { Emoji } from "~/comps/shared/Emoji";
 import { Skill } from "../atoms/Skill";
 import { useSkillsTypeFilteredAPI } from "../controller";
 
+import styles from "./SkillList.module.scss";
+
 export type SkillListProps = {
   caption: string;
   emoji: string;
@@ -25,7 +27,7 @@ export const SkillList: React.VFC<SkillListProps> = ({
       </h2>
       <AwaitFetch data={data} loading={loading} error={error}>
         {(data) => (
-          <div>
+          <div className={styles.skillListContainer}>
             {data.skills.map((s, i) => (
               <Skill caption={s.name} level={s.level} key={i} />
             ))}

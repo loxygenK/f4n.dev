@@ -1,0 +1,11 @@
+@use "~/styling/layout.module.scss";
+
+.skill-list-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 0.25em;
+
+  @include layout.for(phone) {
+    grid-template-columns: 1fr;
+  }
+}
