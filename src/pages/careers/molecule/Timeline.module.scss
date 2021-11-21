@@ -1,0 +1,31 @@
+@use "~/styling/color.module.scss";
+@use "~/styling/layout.module.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 5em);
+  margin-left: 5em;
+}
+
+.main-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+
+
+  border-left: 3px solid darken(color.get-theme-color(background-alt), 10);
+
+  @include layout.for(tablet) {
+    width: 100%;
+    margin-left: 0;
+  }
+
+}
+
+.scope-out {
+  content: "";
+  width: 100%;
+  height: 2em;
+  border-left: 3px dotted darken(color.get-theme-color(background-alt), 10);
+}
