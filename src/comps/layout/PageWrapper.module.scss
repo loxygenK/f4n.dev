@@ -4,8 +4,10 @@
 .wrapper {
   @include layout.centerize;
 
-  margin: 5em 2em;
   width: min(50em, calc(100vw - 4em));
-
   min-height: 100%;
+
+  margin: 5em 1em;
+
+  color: color.get-theme-color(text-color);
 }

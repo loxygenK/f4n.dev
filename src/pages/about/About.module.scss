@@ -7,5 +7,9 @@
   grid-auto-columns: 1fr 2fr;
   grid-gap: 1.5em;
   width: 100%;
+
+  @include layout.for(tablet) {
+    grid-auto-flow: row;
+  }
 }
 

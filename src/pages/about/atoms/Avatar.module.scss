@@ -1,11 +1,19 @@
 @use "~/styling/color.module.scss";
+@use "~/styling/layout.module.scss";
 
 .avatar {
+  display: flex;
+  justify-content: center;
+
   img {
     margin-bottom: -15px;
     width: 100%;
 
     animation: 5s ease-in-out alternate infinite shake;
+
+    @include layout.for(tablet) {
+      max-width: 50%;
+    }
   }
 
   overflow: hidden;
