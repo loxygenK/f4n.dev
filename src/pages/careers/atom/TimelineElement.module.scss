@@ -2,6 +2,7 @@
 @use "~/styling/layout.module.scss";
 
 $CURSOR_SIZE: 0.7em;
+$CURSOR_COLOR: darken(color.get-theme-color(background-alt), 25);
 
 .container {
   display: flex;
@@ -17,12 +18,12 @@ $CURSOR_SIZE: 0.7em;
 
     transform: translateX(calc(-50% - 2px));
 
-    background-color: color.get-theme-color(text-color-accent-primary);
+    background-color: $CURSOR_COLOR;
   }
 
   width: 2em;
   height: $CURSOR_SIZE / 2;
-  border-bottom: 2px dotted color.get-theme-color(text-color-accent-primary);
+  border-bottom: 2px dotted $CURSOR_COLOR;
 
   @include layout.for(tablet) {
     width: 1em;
@@ -30,11 +31,25 @@ $CURSOR_SIZE: 0.7em;
 }
 
 .card {
-  background-color: color.get-theme-color(background-alt);
+  display: flex;
+  flex-direction: column;
+
   margin-top: calc(#{$CURSOR_SIZE} / 2 - 2px);
   padding: 0.3em 0.5em;
+
+  background-color: color.get-theme-color(background-alt);
+  border-top: 2px solid lighten($CURSOR_COLOR, 0);
 
   @include layout.for(tablet) {
     width: 100%;
   }
+}
+
+.date {
+  font-size: 0.9em;
+}
+
+.title {
+  font-size: 1.1em;
+  font-weight: 700;
 }

@@ -14,8 +14,8 @@ export const Timeline: React.VFC = () => {
         <div className={styles.container}>
           <div className={styles.scopeOut} />
           <div className={styles.mainTimeline}>
-            {data.careers.map((i, k) => (
-              <TimelineElement key={k} />
+            {data.careers.map((c, k) => (
+              <TimelineElement when={c.when} title={c.title} key={k} />
             ))}
           </div>
           <div className={styles.scopeOut} />

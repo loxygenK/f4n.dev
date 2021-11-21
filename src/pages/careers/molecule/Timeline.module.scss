@@ -11,7 +11,7 @@
 .main-timeline {
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: 2em;
 
 
   border-left: 3px solid darken(color.get-theme-color(background-alt), 10);
