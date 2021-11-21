@@ -6,6 +6,8 @@ generates:
       - "typescript"
       - "typescript-operations"
       - "typescript-react-apollo"
+    config:
+      enumsAsTypes: true
   ./.graphql/graphql.schema.json:
     plugins:
       - "introspection"
