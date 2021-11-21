@@ -1,0 +1,55 @@
+@use "~/styling/color.module.scss";
+@use "~/styling/layout.module.scss";
+
+$CURSOR_SIZE: 0.7em;
+$CURSOR_COLOR: darken(color.get-theme-color(background-alt), 25);
+
+.container {
+  display: flex;
+}
+
+.cursor {
+  &:before {
+    content: "";
+    display: block;
+    width: $CURSOR_SIZE;
+    height: $CURSOR_SIZE;
+    border-radius: 100%;
+
+    transform: translateX(calc(-50% - 2px));
+
+    background-color: $CURSOR_COLOR;
+  }
+
+  width: 2em;
+  height: $CURSOR_SIZE / 2;
+  border-bottom: 2px dotted $CURSOR_COLOR;
+
+  @include layout.for(tablet) {
+    width: 1em;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+
+  margin-top: calc(#{$CURSOR_SIZE} / 2 - 2px);
+  padding: 0.3em 0.5em;
+
+  background-color: color.get-theme-color(background-alt);
+  border-top: 2px solid lighten($CURSOR_COLOR, 0);
+
+  @include layout.for(tablet) {
+    width: 100%;
+  }
+}
+
+.date {
+  font-size: 0.9em;
+}
+
+.title {
+  font-size: 1.1em;
+  font-weight: 700;
+}

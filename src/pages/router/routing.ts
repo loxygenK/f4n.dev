@@ -3,6 +3,7 @@ import { Splash } from "~/pages/splash/Splash";
 import { Main } from "~/pages/main/Main";
 import { About } from "../about/About";
 import { Skills } from "../skills/Skills";
+import { Careers } from "../careers/Careers";
 
 export type QuickNavigation = {
   path: string;
@@ -14,6 +15,7 @@ export const routingTable: RouteProps[] = [
   { path: "/me", component: Main, exact: true },
   { path: "/about", component: About, exact: true },
   { path: "/skills", component: Skills, exact: true },
+  { path: "/careers", component: Careers, exact: true },
 ];
 
 export const quickNavigations: QuickNavigation[] = [
