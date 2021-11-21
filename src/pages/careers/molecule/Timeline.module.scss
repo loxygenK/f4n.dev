@@ -6,6 +6,11 @@
   flex-direction: column;
   width: calc(100% - 5em);
   margin-left: 5em;
+
+  @include layout.for(tablet) {
+    width: 100%;
+    margin-left: 0;
+  }
 }
 
 .main-timeline {
@@ -15,11 +20,6 @@
 
 
   border-left: 3px solid darken(color.get-theme-color(background-alt), 10);
-
-  @include layout.for(tablet) {
-    width: 100%;
-    margin-left: 0;
-  }
 
 }
 
