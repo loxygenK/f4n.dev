@@ -3,8 +3,9 @@ import React from "react";
 import { Setupper, SetupperProps } from "../setup";
 
 const apolloClient = new ApolloClient({
-  // TODO: Change this from the environment variable
-  uri: "http://localhost:8000/graphql",
+  uri: PRODUCTION
+    ? "https://api.f4n.dev/graphql"
+    : "http://localhost:8000/graphql",
   cache: new InMemoryCache(),
 });
 

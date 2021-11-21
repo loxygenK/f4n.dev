@@ -1,4 +1,4 @@
-import { Configuration as WebpackConfiguration } from "webpack";
+import { Configuration as WebpackConfiguration, DefinePlugin } from "webpack";
 import { Configuration as WebpackDevServerConfiguration } from 'webpack-dev-server';
 
 import path from "path"
@@ -79,6 +79,9 @@ const configuration: Configuration = {
           noErrorOnMissing: true,
         },
       ]
+    }),
+    new DefinePlugin({
+      PRODUCTION: JSON.stringify(isProduction)
     }),
   ],
   devServer: {

@@ -21,3 +21,7 @@ declare module "react-twemoji" {
   }) => React.ReactElement;
   export default Twemoji;
 }
+
+// Safety: This is intented to be global variables.
+// eslint-disable-next-line
+declare var PRODUCTION: boolean;

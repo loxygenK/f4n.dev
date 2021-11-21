@@ -1,3 +1,4 @@
+@use "sass:math";
 @use "~/styling/color.module.scss";
 @use "~/styling/layout.module.scss";
 
@@ -22,7 +23,7 @@ $CURSOR_COLOR: darken(color.get-theme-color(background-alt), 25);
   }
 
   width: 2em;
-  height: $CURSOR_SIZE / 2;
+  height: math.div($CURSOR_SIZE, 2);
   border-bottom: 2px dotted $CURSOR_COLOR;
 
   @include layout.for(tablet) {
