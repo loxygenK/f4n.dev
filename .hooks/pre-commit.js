@@ -4,8 +4,11 @@ const npmify = require("./__npmify");
 
 const prettier = npmify.executeNpm("lint:prettier", "prettier");
 if(prettier.status !== 0) {
-  prettify.warn("Code style issue is detected; Fixing automatically.");
+  prettify.error("Code style issue is detected; Fixing automatically.");
   npmify.executeNpm("fix:prettier", "prettier(fixer)");
+
+  prettify.warn("Please review the change and commit again.");
+  process.exit(1)
 }
 console.log("");
 
