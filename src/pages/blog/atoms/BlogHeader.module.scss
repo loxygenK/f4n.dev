@@ -1,0 +1,11 @@
+.header {
+  display: grid;
+  grid-auto-flow: row;
+
+  grid-gap: 0.25em;
+}
+
+.tags {
+  display: inline-flex;
+  gap: 0.25em;
+}

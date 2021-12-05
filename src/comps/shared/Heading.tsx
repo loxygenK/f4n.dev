@@ -7,9 +7,19 @@ export type HeadingProps = {
   children: string;
   emoji: string;
   sub: string;
+  disableBottomMargin?: boolean;
 };
-export const Heading = ({ children, emoji, sub }: HeadingProps) => (
-  <h1 className={styles.heading}>
+export const Heading = ({
+  children,
+  emoji,
+  sub,
+  disableBottomMargin = false,
+}: HeadingProps) => (
+  <h1
+    className={`${styles.heading} ${
+      disableBottomMargin ? styles.disableBottomMargin : ""
+    }`}
+  >
     <Emoji emoji={emoji} />
     <span>{children}</span>
     {/* eslint-disable-next-line react/jsx-no-comment-textnodes */}

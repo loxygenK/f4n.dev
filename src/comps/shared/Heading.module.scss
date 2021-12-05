@@ -15,6 +15,10 @@
 
   border-bottom: 2px solid color.get-theme-color(text-color-accent-primary);
 
+  &.disable-bottom-margin {
+    margin-bottom: 0em;
+  }
+
   * {
     line-height: 100%;
   }

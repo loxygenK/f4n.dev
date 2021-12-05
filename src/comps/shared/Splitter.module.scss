@@ -1,0 +1,6 @@
+@use "~/styling/color.module.scss";
+
+.separator {
+  color: darken(color.get-theme-color(background-alt), 15);
+  margin: 0 0.2em 0 0.1em;
+}

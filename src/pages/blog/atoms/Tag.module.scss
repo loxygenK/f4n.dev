@@ -1,0 +1,11 @@
+@use "~/styling/color.module.scss";
+
+.tag {
+  background-color: color.get-theme-color(dark-background-alt);
+  color: color.get-theme-color(background);
+
+  font-size: 0.9em;
+  letter-spacing: 0.05em;
+
+  padding: 0.1em 0.75em;
+}

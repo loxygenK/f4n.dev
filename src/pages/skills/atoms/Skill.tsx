@@ -1,6 +1,7 @@
 import React from "react";
 import { SkilledLevel } from "~/api/graphql/autogen/scheme";
 import { Emoji } from "~/comps/shared/Emoji";
+import { Splitter } from "~/comps/shared/Splitter";
 
 import styles from "./Skill.module.scss";
 
@@ -22,7 +23,7 @@ export const Skill: React.VFC<SkillProps> = ({ caption, level, emoji }) => (
     <span className={styles.name}>{caption}</span>
     <span className={styles.level}>
       <Emoji emoji={emoji} />
-      <span className={styles.separator}>･</span>
+      <Splitter />
       {skilledLevelToCaption[level]}
     </span>
   </div>
