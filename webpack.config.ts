@@ -18,7 +18,8 @@ const configuration: Configuration = {
   entry: path.resolve(__dirname, "src/index.tsx"),
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "bundled_[contenthash].js"
+    filename: "bundled_[contenthash].js",
+    publicPath: '/',
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js"],
