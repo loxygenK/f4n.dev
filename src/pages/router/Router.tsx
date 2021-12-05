@@ -14,7 +14,6 @@ export const InternalAppRouter = () => {
           {routingTable.map((r, i) => (
             <Route key={i} {...r} />
           ))}
-          <Route path="/about" component={() => <div>Hello!</div>} />
         </Switch>
       </ContentWrapper>
     </TransitionAnimator>
