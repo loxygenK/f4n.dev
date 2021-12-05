@@ -5,6 +5,7 @@ import { About } from "../about/About";
 import { Skills } from "../skills/Skills";
 import { Careers } from "../careers/Careers";
 import { Works } from "../works/Works";
+import { Blog } from "../blog/Blog";
 
 export type QuickNavigation = {
   path: string;
@@ -18,6 +19,7 @@ export const routingTable: RouteProps[] = [
   { path: "/skills", component: Skills, exact: true },
   { path: "/careers", component: Careers, exact: true },
   { path: "/works", component: Works, exact: true },
+  { path: "/blog/:slug", component: Blog, exact: true },
 ];
 
 export const quickNavigations: QuickNavigation[] = [
